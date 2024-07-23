@@ -1,5 +1,6 @@
 /
 Auth: Senthil
+Date: 23/07/2024
 Challenge - 29
 
 No more rookie numbers - from now on, we're going to pump those numbers up.
@@ -23,12 +24,13 @@ How many "good" numbers exist between 0 and your input (inclusive)?
 
 \
 
-
 /Return if the number is rookie or not
-rooki:{x: "J"$(string(string(x))); :all((deltas x)>-1)}
+rooki:{x: string x; x~ (asc x)};
 /initial number
 x:0
 /Count of rookie number
 c:0
 /If the rookie number found, 1 will be added in c
-do[520185742;c+:(rooki x);x+:1]
+\ts do[520185742;c+:(rooki x);x+:1]
+
+show c
